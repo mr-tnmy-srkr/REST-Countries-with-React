@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./Country.css";
+import CountryDetail from "../CountryDetails/CountryDetail";
 
 //   need to focus
 const Country = ({ country, handleVisitedCountry, handleVisitedFlag }) => {
@@ -31,10 +32,19 @@ const Country = ({ country, handleVisitedCountry, handleVisitedFlag }) => {
       </button>
       <br />
       {/* recap */}
-      <button onClick={(()=>handleVisitedFlag(country.flags.png))}>Add Flag</button>
+      <button onClick={() => handleVisitedFlag(country.flags.png)}>
+        Add Flag
+      </button>
       <br />
       <button onClick={handleVisited}>{visited ? "Visited" : "Going"}</button>
       {visited ? "I have visited this country." : "I want to visit"}
+      <hr />
+      {/* props drilling */}
+      <CountryDetail
+        country={country}
+        handleVisitedCountry={handleVisitedCountry}
+        handleVisitedFlag={handleVisitedFlag}
+      ></CountryDetail>
     </div>
   );
 };
