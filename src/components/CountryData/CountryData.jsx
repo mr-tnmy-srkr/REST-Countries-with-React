@@ -2,7 +2,7 @@
 const CountryData = (props) => {
     return (
         <div>
-           <p><small> Country data : {props.country.name.common}</small></p>
+           <p><small> Country Data : {props.country.name.common}</small></p>
         </div>
     );
 };

@@ -19,7 +19,14 @@ const Country = ({ country, handleVisitedCountry, handleVisitedFlag }) => {
       <h3 style={{ color: visited ? "blue" : "green" }}>
         Name : {name?.common}
       </h3>
-      <img src={flags.png} alt="" />
+      <div>
+        {" "}
+        <img
+          style={{ height: "300px", width: "100%" }}
+          src={flags.png}
+          alt=""
+        />
+      </div>
       <p>Population : {population}</p>
       <p>Area : {area}</p>
       <p>
@@ -31,13 +38,15 @@ const Country = ({ country, handleVisitedCountry, handleVisitedFlag }) => {
         mark Visited
       </button>
       <br />
+      <br />
       {/* recap */}
       <button onClick={() => handleVisitedFlag(country.flags.png)}>
         Add Flag
       </button>
       <br />
+      <br />
       <button onClick={handleVisited}>{visited ? "Visited" : "Going"}</button>
-      {visited ? "I have visited this country." : "I want to visit"}
+      {visited ? "      I have visited this country." : "      I want to visit"}
       <hr />
       {/* props drilling */}
       <CountryDetail
